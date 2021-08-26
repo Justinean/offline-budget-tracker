@@ -56,7 +56,6 @@ self.addEventListener("activate", function (evt) {
 // });
 
 self.addEventListener('fetch', function (evt) {
-    console.log(evt.request)
     if (!(evt.request.url.includes('/api/transaction'))) {
         evt.respondWith(
             caches.match(evt.request).then(cachedResponse => {
