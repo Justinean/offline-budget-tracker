@@ -156,7 +156,6 @@ function checkDatabase() {
 
   getAll.onsuccess = function () {
     getAll.result.forEach((item) => {
-      console.log(item)
       delete item.transactionID;
       console.log(item)
       fetch('/api/transaction', {
@@ -177,7 +176,7 @@ function checkDatabase() {
     })
     if (!iserr) {
       window.indexedDB.deleteDatabase("transactions");
-      window.location.reload();
+      // window.location.reload();
     }
     iserr = false;
   }
