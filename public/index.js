@@ -175,8 +175,8 @@ function checkDatabase() {
         })
     })
     if (!iserr) {
-      window.indexedDB.deleteDatabase("transactions");
-      // window.location.reload();
+      window.indexedDB.deleteDatabase("transactions").then();
+      window.location.reload();
     }
     iserr = false;
   }
